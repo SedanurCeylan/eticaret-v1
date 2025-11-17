@@ -542,3 +542,57 @@ main {
 }
 
 
+
+
+
+
+
+/* ürün details */
+
+
+
+/* ÜRÜN DETAY RESİM BÖLÜMÜ */
+/* GALERİ KAPSAYICISI → Tam ortalama */
+.gallery-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BÜYÜK RESİM KUTUSU */
+.img-big-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* BÜYÜK RESİM */
+.img-big-wrap img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* KÜÇÜK RESİMLER */
+.thumbs-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.thumbs-wrap img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: .2s;
+}
+
+.thumbs-wrap img:hover {
+    border-color: #ED5A24;
+    transform: scale(1.05);
+}
