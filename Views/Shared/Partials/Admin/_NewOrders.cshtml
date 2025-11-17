@@ -1,15 +1,16 @@
 @model e_ticaret_proje.Models.AdminDashboardViewModel
 
-<div class="row">
+<div class="row mt-3">
     <div class="col">
-        <div class="card shadow">
-            <div class="card-header py-1">
-                <h5 class="card-title">Yeni Siparişler</h5>
+        <div class="card shadow-sm dashboard-card">
+            <div class="card-header dashboard-card-header">
+                <h5 class="card-title mb-0">Yeni Siparişler</h5>
             </div>
+
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped mb-0">
-                        <thead class="table-secondary">
+                    <table class="table dashboard-table mb-0 align-middle">
+                        <thead>
                             <tr>
                                 <th>Sipariş Id</th>
                                 <th>Kullanıcı Adı</th>
@@ -30,13 +31,13 @@
                                         <td>@item.ToplamFiyat.ToString("C")</td>
                                         <td>@item.SiparisTarihi.ToShortDateString()</td>
                                         <td>
-                                            <span class="badge bg-primary">Onay Bekliyor</span>
+                                            <span class="order-status">Onay Bekliyor</span>
                                         </td>
                                         <td>
                                             <a asp-controller="Order"
                                                asp-action="Details"
                                                asp-route-id="@item.OrderId"
-                                               class="btn btn-primary btn-sm">
+                                               class="btn btn-icon">
                                                 <i class="fa-solid fa-right-long"></i>
                                             </a>
                                         </td>

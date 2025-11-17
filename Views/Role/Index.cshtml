@@ -1,55 +1,64 @@
 @model IEnumerable<AppRole>
 
 @{
-    Layout="_AdminLayout";
+    Layout = "_AdminLayout";
 }
-<div class="row">
+
+<div class="row mt-3">
     <div class="col">
-        <div class="card shadow">
-            <div class="card-header py-1 d-flex justify-content-between">
-                <h5 class="card-title">Roller</h5>
-                <a asp-action="Create" class="btn btn-sm btn-primary align-items-center">
+        <div class="card shadow-sm dashboard-card rounded-3">
+
+            <div class="card-header dashboard-card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Roller</h5>
+
+                <a asp-action="Create" class="btn-action add text-decoration-none">
                     <i class="fa-solid fa-plus"></i>
                 </a>
             </div>
+
             <div class="card-body">
 
-
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped mb-0">
-                        <thead class="table-secondary">
+
+                    <table class="dashboard-table w-100">
+                        <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Role Adı</th>
-                                <th style="width: 100px; "></th>
+                                <th style="width: 80px;">Id</th>
+                                <th>Rol Adı</th>
+                                <th style="width: 150px; text-align:center;">İşlemler</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach (var role in Model)
                             {
                                 <tr>
                                     <td>@role.Id</td>
                                     <td>@role.Name</td>
+
                                     <td class="text-center">
+
                                         <a asp-action="Edit" asp-route-id="@role.Id"
-                                            class="btn btn-primary btn-sm">
+                                           class="btn-action edit text-decoration-none">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
+
                                         <a asp-action="Delete" asp-route-id="@role.Id"
-                                            class="btn btn-danger btn-sm">
+                                           class="btn-action delete text-decoration-none">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
-                                        
 
                                     </td>
-
                                 </tr>
                             }
-
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>

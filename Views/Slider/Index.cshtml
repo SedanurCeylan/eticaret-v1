@@ -1,66 +1,86 @@
-
 @model List<SliderGetModel>
 @{
-    Layout="_AdminLayout";
+    Layout = "_AdminLayout";
 }
- <div class="row">
-            <div class="col">
-                <div class="card shadow">
-                    <div class="card-header py-1 d-flex justify-content-between">
-                        <h5 class="card-title">Sliderlar</h5>
-                        <a asp-action="Create" class="btn btn-sm btn-primary align-items-center">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped mb-0">
-                                <thead class="table-secondary">
-                                    <tr>
-                                        <th style="width: 20px;">Id</th>
-                                        <th style="width: 200px;">Resim</th>
-                                        <th>Başlık</th>
-                                        <th>Aktif</th>
-                                        <th>İndex</th>
-                                        <th style="width: 100px;"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach(var item in Model)
-                                {
-                                    <tr>
-                                        <td>@item.Id</td>
-                                        <td>
-                                            <img src="~/img/@item.Resim" class="img-fluid" alt="">
-                                        </td>
-                                        <td>@item.Baslik</td>
-                                        <td>
-                                            @if(item.Aktif)
-                                            {
-                                                <i class="fa-solid fa-circle-check text-success"></i>
-                                            }
-                                            else
-                                            {
-                                                <i class="fa-solid fa-circle-xmark text-danger"></i>
-                                            }
-                                           
-                                        </td>
-                                        <td>@item.Sira</td>
-                                        <td class="text-center">
-                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                            </a>
-                                             <a asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id"
-                                                class="btn btn-danger btn-sm">
+
+<div class="row mt-3">
+    <div class="col">
+        <div class="card shadow-sm dashboard-card rounded-3">
+
+            <div class="card-header dashboard-card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Sliderlar</h5>
+
+                <a asp-action="Create" class="btn-action add text-decoration-none">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table dashboard-table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">Id</th>
+                                <th style="width: 200px;">Resim</th>
+                                <th>Başlık</th>
+                                <th>Aktif</th>
+                                <th>Index</th>
+                                <th style="width: 120px;" class="text-center">İşlemler</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+
+                                    <td>
+                                        <img src="~/img/@item.Resim"
+                                             alt=""
+                                             class="product-thumb"
+                                             style="width: 140px; height: 70px; object-fit: cover; border-radius: 10px; border: 1px solid #e5e7eb;">
+                                    </td>
+
+                                    <td>@item.Baslik</td>
+
+                                    <td>
+                                        @if (item.Aktif)
+                                        {
+                                            <span class="status-badge yes">Aktif</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="status-badge no">Pasif</span>
+                                        }
+                                    </td>
+
+                                    <td>@item.Sira</td>
+
+                                    <td class="text-center">
+
+                                        <a asp-action="Edit" asp-route-id="@item.Id"
+                                           class="btn-action edit text-decoration-none">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+
+                                        <a asp-action="Delete"
+                                           asp-route-id="@item.Id"
+                                           class="btn-action delete text-decoration-none">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
-                                        </td>
-                                    </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
                 </div>
+
             </div>
+
         </div>
+    </div>
+</div>

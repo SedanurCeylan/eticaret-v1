@@ -2,34 +2,34 @@
 @model List<Order>
 
 @section Bar {
-
-    <section class="bg-primary p-3">
+    <section class="checkout-bar p-3">
         <div class="container">
             <nav>
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item">
                         <a asp-controller="Home" asp-action="Index">Anasayfa</a>
                     </li>
-                    <li class="breadcrumb-item">Siparişler
-                    </li>
+                     <li class="breadcrumb-item">Hesabım</li>
+                    <li class="breadcrumb-item">Siparişler</li>
                 </ol>
             </nav>
         </div>
     </section>
 }
 
+
 <section class=" my-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-12 col-md-3">
                 @await Html.PartialAsync("Partials/Site/_accountSideBar")
             </div>
-            <div class="col-9">
-                <div class="card shadow py-1">
+            <div class="col-12 col-md-9">
+                <div class="card shadow py-0">
                     <div class="card-header">
                         <h5 class="card-title mb-0">Siparişler</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body ">
                     @if(Model.Count==0){
                         <div class="alert alert-warning">Siparişiniz Bulunmamaktadır.</div>
                     }

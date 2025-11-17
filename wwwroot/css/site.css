@@ -1,121 +1,544 @@
-:root{
-    --primary: #ff7f00;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.btn-light{
-    background-color: #fff;
-    border-color: #dee2e6;
-    color: #212559;
-}
-
-.bg-primary, .btn-primary {
-    background-color: var(--primary) !important;
-}
-.navbar-brand{
-    color: var(--primary);
-}
-
-.btn-light i{
-    color: var(--primary);
-}
-
-.slider_nav{
-    max-height: 250px;
-}
-@media (min-width :1200px){
-    .slider_nav{max-height: 300px;}
-}
-
-@media (min-width :1400px){
-    .slider_nav{max-height: 350px;}
+main {
+    flex: 1;
 }
 
 
 
-.price-wrap .price-discount{
-    font-size: 1.2rem;
+/* ========================================
+      PREMIUM ÜRÜN KARTI (YENİ TASARIM)
+======================================== */
+
+.product-card-new {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: .25s ease;
 }
 
-.img-wrap{
+.product-card-new:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(255,107,53,.18);
+}
+
+/* Resim Kutusu */
+.product-image-box {
+    background: #fff;
+    padding: 15px;
     height: 240px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.img-wrap span{
-    position: absolute;
-   top:10px;
-   right: 10px;
-}
-
-.img-wrap img{
-    height: 100%;
+.product-image {
+    max-height: 220px;
     width: auto;
-    max-width:100%;
-    object-fit: cover;
-}
-
-.breadcrumb a{
-    color: #fff;
-    opacity: .9;
-}
-.breadcrumb .breadcrumb-item{
-    color: #fff;
-}
-
-.breadcrumb-item+.breadcrumb-item::before {
-    color: #fff;
-}
-
-
-
-
-.gallery-wrap .img-big-wrap{
-    width: 100%;
-    height: 400px;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 576px) {
-  .gallery-wrap .img-big-wrap {
-    height: 250px;
-     max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.gallery-wrap .img-big-wrap img{
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
     object-fit: contain;
+    transition: .3s ease;
+}
+
+.product-card-new:hover .product-image {
+    transform: scale(1.03);
+}
+
+/* Ürün Bilgi Alanı */
+.product-info-new {
+    padding: 15px 16px 18px 16px;
+}
+
+/* Ürün adı */
+.product-title-new {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 80%;
+    display: inline-block;
+    line-height: 1.3;
+    transition: .2s ease;
+}
+
+.product-title-new:hover {
+    color: var(--primary-orange);
+}
+
+/* Favori ikon */
+.favorite-icon {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    transition: .2s ease;
+}
+
+.favorite-icon:hover {
+    color: var(--primary-orange);
+}
+
+/* Fiyat */
+.price-line {
+    margin: 10px 0;
+}
+
+.new-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+}
+
+/* SEPETE EKLE */
+/* SEPETE EKLE – DÜZ TURUNCU BUTON */
+.add-to-cart-btn {
+    width: 100%;
+    background: var(--primary-orange);
+    color: #fff;
+    border: none;
+    padding: 11px 0;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .3px;
+    transition: .25s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--primary-orange-dark);
+    box-shadow: 0 4px 10px rgba(255,107,53,0.25);
+    transform: translateY(-2px);
 }
 
 
-.gallery-wrap .thumbs-wrap{
-    text-align: center;
+
+
+
+
+
+/* ========================================
+      KREM FOOTER
+======================================== */
+
+.footer-area {
+    background: var(--soft-orange);
+    color: var(--dark-gray);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 12px 12px 0 0;
 }
 
+/* Başlıklar */
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: var(--primary-orange-dark);
+}
 
+/* Linkler */
+.footer-links li {
+    margin-bottom: 6px;
+}
 
-.gallery-wrap .thumbs-wrap a{
-    width: 50px;
-    height: 50px;
-    border: 1px solid #dde2e6;
-    border-radius: .4rem;
-    margin: 3px;
-    display: inline-block; 
+.footer-links a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-orange);
+}
+
+/* Email input alanı */
+.footer-input-group {
+    display: flex;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
     overflow: hidden;
 }
 
+.footer-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    outline: none;
+}
 
-.gallery-wrap .thumbs-wrap img{
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: zoom-in;
+.footer-btn {
+    background: var(--primary-orange);
+    border: none;
+    padding: 10px 16px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.footer-btn:hover {
+    background: var(--primary-orange-dark);
+}
+
+/* Sosyal medya ikonları */
+.footer-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    margin-left: 6px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 50%;
+    color: var(--dark-gray);
+    transition: .25s ease;
+    font-size: 1.15rem;
+}
+
+.footer-social a:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+/* Alt yazı */
+.footer-copy {
+    opacity: .8;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+/* ========================================
+   LOGIN SAYFASI – TURUNCU TEMA
+======================================== */
+
+/* Sayfa arka planı tamamen beyaz */
+.login-wrapper {
+    background: #ffffff;
+    padding: 60px 0;
+}
+
+/* Login Kartı */
+.login-card {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    padding: 32px 26px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+
+/* Başlık */
+.login-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--primary-orange-dark);
+}
+
+/* Inputlar */
+.login-input {
+    padding: 11px 12px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    transition: .2s ease;
+}
+
+.login-input:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.15rem rgba(255,107,53,.25);
+}
+
+/* Giriş Yap Butonu */
+.login-btn {
+    width: 100%;
+    background: var(--primary-orange);
+    color: white;
+    padding: 12px 0;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: .25s;
+}
+
+.login-btn:hover {
+    background: var(--primary-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,107,53,.25);
+}
+
+/* Şifre unut */
+.forgot-link {
+    color: var(--primary-orange-dark);
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    color: var(--primary-orange);
+}
+
+
+
+/* ========================================
+   REGISTER SAYFASI – TURUNCU TEMA
+======================================== */
+
+/* Breadcrumb */
+.register-breadcrumb {
+    background: #FFF4EC;
+    border-bottom: 1px solid #eee;
+}
+
+/* Arka plan */
+.register-section {
+    background: #ffffff;
+}
+
+/* Kart */
+.register-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 32px 26px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+/* Başlık */
+.register-title {
+    font-weight: 700;
+    color: var(--primary-orange-dark);
+}
+
+/* Input */
+.register-input {
+    padding: 11px 12px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    transition: .2s ease;
+}
+
+.register-input:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.15rem rgba(255,107,53,.25);
+}
+
+/* Kaydol Butonu */
+.register-btn {
+    background: var(--primary-orange);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 8px;
+    border: none;
+    transition: .25s ease;
+}
+
+.register-btn:hover {
+    background: var(--primary-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,107,53,.25);
+}
+
+
+
+
+/* ========================================
+   GLOBAL BREADCRUMB (Site İÇİN)
+======================================== */
+
+.breadcrumb-area {
+    background: #FFF4EC;                /* Açık krem turuncu */
+    border-bottom: 1px solid #f1e5dc;   /* İnce alt çizgi */
+    padding: 14px 0;                    /* Yükseklik */
+}
+
+.breadcrumb-area .breadcrumb {
+    font-size: 1rem;        /* 16px */
+    font-weight: 500;
+    margin: 0;
+}
+
+.breadcrumb-area .breadcrumb a {
+    color: var(--primary-orange-dark);
+    text-decoration: none;
+}
+
+.breadcrumb-area .breadcrumb a:hover {
+    color: var(--primary-orange);
+}
+
+.breadcrumb-area .breadcrumb-item.active {
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+
+
+
+.custom-navbar .nav-link {
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: #333;
+    transition: 0.25s;
+}
+
+
+/* ACTIVE durumunda */
+.custom-navbar .nav-link.active {
+    background: #ED5A24;                 /* yumuşak turuncu bg */
+    color: #FFF4EC !important; 
+}
+
+.category-scroll-wrapper {
+    position: relative;
+}
+
+.category-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navbar içindeki UL yatay scroll’u desteklesin */
+.category-scroll .navbar-nav {
+    flex-wrap: nowrap !important;
+}
+
+/* Ok butonları */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #444;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.scroll-btn:hover {
+    background: #f2f2f2;
+}
+
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+
+
+
+
+
+/* VİEWS HOME İNDEX */
+
+/* 📱 Mobil optimize edilmiş ürün kartı */
+@media (max-width: 576px) {
+
+    /* KART DIŞI */
+    .product-card-new {
+        padding: 8px !important;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid #ececec;
+    }
+
+    /* RESİM KUTUSU */
+    .product-card-new .product-image-box {
+        width: 100%;
+        height: 110px !important;   /* 🔥 en kritik */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+
+    /* ÜRÜN RESMİ */
+    .product-card-new .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain !important;
+    }
+
+    /* ÜRÜN BİLGİ ALANI */
+    .product-card-new .product-info-new {
+        padding: 0 !important;
+    }
+
+    /* ÜRÜN BAŞLIĞI */
+    .product-card-new .product-title-new {
+        font-size: 13px !important;
+        font-weight: 500;
+        line-height: 1.2;
+        height: 30px; /* 2 satır için ideal */
+        overflow: hidden;
+        margin-right: 6px;
+    }
+
+    /* FAVORİ İKON */
+    .product-card-new .favorite-icon {
+        font-size: 14px !important;
+        padding: 0 !important;
+        background: none;
+        border: none;
+    }
+
+    /* FİYAT */
+    .product-card-new .new-price {
+        font-size: 15px !important;
+        font-weight: 700;
+    }
+
+    /* SEPETE EKLE */
+    .product-card-new .add-to-cart-btn {
+        width: 100%;
+        padding: 6px !important;     /* 🔥 daha küçük */
+        font-size: 12px !important;
+        border-radius: 6px;
+    }
+
+    /* COLUMNS — 2’liyi garantile */
+    .row.row-cols-2 > .col {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+
+.list-group-item.active {
+    background: #ED5A24 !important;  /* turuncu */
+    color: #fff !important;
+    border-color: #ED5A24 !important;
+    font-weight: 600 !important;
+}
+
+.list-group-item.active:hover {
+    background: #d04a1a !important;
 }
 
 

@@ -4,71 +4,92 @@
     Layout = "_AdminLayout";
 }
 
-<div class="row">
+<div class="row mt-3">
     <div class="col">
-        <div class="card shadow">
-            <div class="card-header py-1 d-flex justify-content-between">
-                <h5 class="card-title">Kullanıcılar</h5>
-                <a asp-action="Create" class="btn btn-sm btn-primary align-items-center">
+        <div class="card shadow-sm dashboard-card rounded-3">
+
+            <!-- HEADER -->
+            <div class="card-header dashboard-card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Kullanıcılar</h5>
+
+                <a asp-action="Create" class="btn btn-action add text-decoration-none">
                     <i class="fa-solid fa-plus"></i>
                 </a>
             </div>
+
             <div class="card-body">
-                <form method="get">
-                    <div class="input-group mb-2">
+
+                <!-- ROLE FİLTRE -->
+                <form method="get" class="mb-3">
+                    <div class="input-group">
                         <select name="role" class="form-select" asp-items="ViewBag.Roller">
-                            <option value="" selected>Hepsi
-                            </option>
+                            <option value="">Hepsi</option>
                         </select>
-                        <button type="submit" class="btn btn-secondary">
+
+                        <button type="submit"
+                                class="btn btn-secondary d-flex align-items-center justify-content-center"
+                                style="width:42px;">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
                 </form>
-                @if (Model.Count() == 0)
+
+                <!-- TABLO -->
+                @if (!Model.Any())
                 {
                     <p class="text-danger">Kullanıcı Bulunamadı.</p>
                 }
                 else
                 {
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped mb-0">
-                            <thead class="table-secondary">
+                        <table class="table dashboard-table align-middle mb-0">
+                            <thead>
                                 <tr>
                                     <th style="width: 50px;">Id</th>
                                     <th>Ad Soyad</th>
                                     <th>Email</th>
-                                    <th style="width: 100px;"></th>
+                                    <th class="text-end" style="width: 120px;">İşlemler</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 @foreach (var user in Model)
                                 {
                                     <tr>
                                         <td>@user.Id</td>
+
                                         <td>
-                                            <a href="#">@user.AdSoyad</a>
-                                        </td>
-                                        <td>@user.UserName</td <td>
-                                        <td>
-                                            <a asp-action="Edit" asp-route-id=@user.Id class="btn btn-primary btn-sm">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                            </a>
-                                            <a asp-controller="User" asp-action="Delete" asp-route-id="@user.Id"
-                                            class="btn btn-danger btn-sm">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
+                                            <a href="#" class="text-decoration-none">@user.AdSoyad</a>
                                         </td>
 
+                                        <td>@user.UserName</td>
+
+                                        <td class="text-end">
+
+                                            <!-- DÜZENLE -->
+                                            <a asp-action="Edit" asp-route-id="@user.Id"
+                                               class="btn btn-action edit text-decoration-none">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </a>
+
+                                            <!-- SİL -->
+                                            <a asp-controller="User" asp-action="Delete"
+                                               asp-route-id="@user.Id"
+                                               class="btn btn-action delete text-decoration-none">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </a>
+
+                                        </td>
                                     </tr>
                                 }
-
                             </tbody>
+
                         </table>
                     </div>
                 }
 
             </div>
+
         </div>
     </div>
 </div>

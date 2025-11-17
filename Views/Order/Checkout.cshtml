@@ -1,16 +1,17 @@
 @model OrderCreateModel
 
 @section Bar {
-
-    <section class="bg-primary p-3">
+    <section class="checkout-bar p-3">
         <div class="container">
             <nav>
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item">
                         <a asp-controller="Home" asp-action="Index">Anasayfa</a>
                     </li>
-                    <li class="breadcrumb-item">Siparişi Tamamla
+                    <li class="breadcrumb-item">
+                        <a asp-controller="Cart" asp-action="Index">Sepetim</a>
                     </li>
+                    <li class="breadcrumb-item">Siparişi Tamamla</li>
                 </ol>
             </nav>
         </div>

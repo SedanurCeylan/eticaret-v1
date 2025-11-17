@@ -1,18 +1,43 @@
 @model Urun
 
-<div class="card shadow">
-    <div class="img-wrap position-relative pt-2 ps-2">
-        <span class="badge bg-success position-absolute">İndirim</span>
-        <img src="~/img/@Model.Resim" alt="@Model.UrunAdi" class="card-img-top">
-    </div>
-    <div class="border-top info-wrap p-3">
-        <a href="#" class="float-end btn btn-light">
-            <i class="fa-regular fa-heart"></i>
-        </a>
-        <a asp-controller="Urun" asp-action="Details" asp-route-id="@Model.Id" class="title text-truncate d-block pe-2 text-decoration-none text-secondary-emphasis ">@Model.UrunAdi</a>
-        <div class="price-wrap">
-            <span class="price-discount">@Model.Fiyat</span>
-            @* <del class="price">49.4999tl</del> *@
+<div class="product-card-new shadow-sm">
+
+    <!-- Ürün resmi -->
+    <a asp-controller="Urun" asp-action="Details" asp-route-id="@Model.Id" class="img-link">
+        <div class="product-image-box">
+            <img src="~/img/@Model.Resim" alt="@Model.UrunAdi" class="product-image">
         </div>
+    </a>
+
+    <!-- Kart alt bilgi -->
+    <div class="product-info-new">
+
+        <div class="d-flex justify-content-between align-items-start">
+            <!-- Ürün adı -->
+            <a asp-controller="Urun" asp-action="Details" asp-route-id="@Model.Id" class="product-title-new">
+                @Model.UrunAdi
+            </a>
+
+            <!-- Favori -->
+            <button class="favorite-icon">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
+
+        <!-- Fiyat -->
+        <div class="price-line">
+            <span class="new-price">@Model.Fiyat.ToString("C2", new System.Globalization.CultureInfo("tr-TR"))
+            </span>
+        </div>
+
+        <!-- Sepete ekle -->
+        <form action="/Cart/AddToCart" method="post" class="me-1 d-inline">
+            <input type="hidden" name="urunId" value="@Model.Id">
+            <button class="add-to-cart-btn">
+                <i class="fa-solid fa-cart-plus me-2"></i> Sepete Ekle
+            </button>
+        </form>
+
     </div>
+
 </div>

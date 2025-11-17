@@ -1,52 +1,58 @@
 @model AccountCreateModel
 
 @section Bar{
-    
-       <section class="bg-primary p-3">
-            <div class="container">
-                <nav>
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item">
-                            <a asp-controller="Home" asp-action="Index">Anasayfa</a>
-                        </li>
-                         <li class="breadcrumb-item">Kayıt Ol
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </section>
+    <section class="register-breadcrumb p-3">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a asp-controller="Home" asp-action="Index">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item active">Kayıt Ol</li>
+            </ol>
+        </div>
+    </section>
 }
 
-<section class=" my-5">
+<section class="register-section py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-7">
-                <div class="card card-body">
-                    <form action="" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6 col-lg-5">
+                
+                <div class="register-card">
+                    <h4 class="register-title text-center mb-4">Kayıt Ol</h4>
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
                         <div class="mb-3">
                             <label asp-for="AdSoyad" class="form-label"></label>
-                            <input asp-for="AdSoyad" class="form-control">
-                            <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                            <input asp-for="AdSoyad" class="form-control register-input">
+                            <span asp-validation-for="AdSoyad" class="text-danger small"></span>
                         </div>
+
                         <div class="mb-3">
                             <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control">
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <input asp-for="Email" class="form-control register-input">
+                            <span asp-validation-for="Email" class="text-danger small"></span>
                         </div>
+
                         <div class="mb-3">
                             <label asp-for="Password" class="form-label"></label>
-                            <input asp-for="Password" class="form-control">
-                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <input asp-for="Password" class="form-control register-input">
+                            <span asp-validation-for="Password" class="text-danger small"></span>
                         </div>
+
                         <div class="mb-3">
                             <label asp-for="ConfirmPassword" class="form-label"></label>
-                            <input asp-for="ConfirmPassword" class="form-control">
-                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            <input asp-for="ConfirmPassword" class="form-control register-input">
+                            <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Kaydol</button>
+
+                        <button type="submit" class="register-btn w-100">Kaydol</button>
                     </form>
+
                 </div>
+
             </div>
         </div>
     </div>

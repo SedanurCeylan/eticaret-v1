@@ -1,0 +1,381 @@
+/* ========================================
+   SEDOS TİCARET - TURUNCU TEMA
+   Bootstrap Override CSS
+======================================== */
+
+
+:root {
+  /* Ana Renkler */
+  --primary-orange: #FF6B35;
+  --primary-orange-dark: #E85A28;
+  --primary-orange-light: #FF8C5A;
+  --secondary-orange: #FFA500;
+  --accent-orange: #FF8243;
+
+  --soft-orange: #FFE7D6;
+  
+  /* Nötr Renkler */
+  --dark-gray: #2C3E50;
+  --medium-gray: #7F8C8D;
+  --light-gray: #ECF0F1;
+  --background: #F8F9FA;
+  
+  /* Durum Renkleri */
+  --success: #27AE60;
+  --warning: #F39C12;
+  --danger: #E74C3C;
+  --info: #3498DB;
+}
+
+/* ========================================
+   BOOTSTRAP PRIMARY OVERRIDE
+======================================== */
+
+/* Butonlar */
+.btn-primary {
+  background-color: var(--primary-orange) !important;
+  border-color: var(--primary-orange) !important;
+  color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--primary-orange-dark) !important;
+  border-color: var(--primary-orange-dark) !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary-orange) !important;
+  border-color: var(--primary-orange) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-orange) !important;
+  color: white !important;
+}
+
+/* Danger butonu turuncu yap */
+.btn-danger {
+  background-color: var(--primary-orange) !important;
+  border-color: var(--primary-orange) !important;
+}
+
+.btn-danger:hover {
+  background-color: var(--primary-orange-dark) !important;
+  border-color: var(--primary-orange-dark) !important;
+}
+
+/* ========================================
+   TEXT RENKLERI
+======================================== */
+
+.text-primary,
+.text-danger {
+  color: var(--primary-orange) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-orange) !important;
+}
+
+/* Link Renkleri */
+a {
+  color: var(--primary-orange);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-orange-dark);
+}
+
+/* ========================================
+   FORM ELEMENTLERİ
+======================================== */
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-orange) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-orange) !important;
+  border-color: var(--primary-orange) !important;
+}
+
+/* ========================================
+   BADGES & PILLS
+======================================== */
+
+.badge.bg-primary,
+.badge.bg-danger {
+  background-color: var(--primary-orange) !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--secondary-orange) !important;
+}
+
+/* ========================================
+   NAVBAR & HEADER
+======================================== */
+
+.navbar-light .navbar-brand {
+  color: var(--primary-orange) !important;
+}
+
+.nav-link.active {
+  color: var(--primary-orange) !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-orange) !important;
+}
+
+/* ========================================
+   KARTLAR
+======================================== */
+
+.card {
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.15);
+}
+
+.card-header {
+  background-color: rgba(255, 107, 53, 0.08);
+  border-bottom: 2px solid var(--primary-orange);
+}
+
+/* ========================================
+   ALERTLER
+======================================== */
+
+.alert-primary {
+  background-color: rgba(255, 107, 53, 0.1);
+  border-color: var(--primary-orange);
+  color: var(--primary-orange-dark);
+}
+
+.alert-warning {
+  background-color: rgba(243, 156, 18, 0.1);
+  border-color: var(--warning);
+  color: #c87f0a;
+}
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.pagination .page-link {
+  color: var(--primary-orange);
+}
+
+.pagination .page-link:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: var(--primary-orange-dark);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-orange);
+  border-color: var(--primary-orange);
+}
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.progress-bar {
+  background-color: var(--primary-orange) !important;
+}
+
+/* ========================================
+   DROPDOWN
+======================================== */
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--primary-orange);
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: var(--primary-orange-dark);
+}
+
+/* ========================================
+   SPINNER
+======================================== */
+
+.spinner-border.text-primary,
+.spinner-grow.text-primary {
+  color: var(--primary-orange) !important;
+}
+
+/* ========================================
+   ÖZEL E-TİCARET ELEMANLAR
+======================================== */
+
+/* Ürün Kartı */
+.product-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+}
+
+.product-price {
+  color: var(--primary-orange);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.product-old-price {
+  color: var(--medium-gray);
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+.product-discount {
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Sepet Badge */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(255, 107, 53, 0.4);
+}
+
+/* Rating Yıldızları */
+.rating-stars {
+  color: var(--secondary-orange);
+}
+
+.rating-stars .fa-star {
+  margin-right: 2px;
+}
+
+/* Kategori Badge */
+.category-badge {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 165, 0, 0.1));
+  color: var(--primary-orange-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+}
+
+.category-badge:hover {
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+
+/* Stok Durumu */
+.stock-available {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.stock-limited {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+.stock-out {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* ========================================
+   HEADER ÖZEL STİLLER
+======================================== */
+
+.custom-header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.search-btn {
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  border: none;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+.user-icon {
+  transition: all 0.3s ease;
+}
+
+.user-icon:hover {
+  color: var(--primary-orange) !important;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   ANIMASYONLAR
+======================================== */
+
+@keyframes pulse-orange {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+  }
+}
+
+.pulse-effect {
+  animation: pulse-orange 2s infinite;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* ========================================
+   RESPONSIVE AYARLAR
+======================================== */
+
+@media (max-width: 768px) {
+  .product-price {
+    font-size: 1.25rem;
+  }
+  
+  .search-btn {
+    padding: 0.5rem 1rem;
+  }
+}

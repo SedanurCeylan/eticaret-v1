@@ -3,65 +3,96 @@
     Layout = "_AdminLayout";
 }
 
-<div class="row">
-    <div class="col">
-        <div class="card shadow">
-            <div class="card-header py-1 d-flex justify-content-between">
-                <h5 class="card-title">Kullanıcı Güncelle</h5>
-                <a asp-action="Index" class="btn btn-sm btn-primary align-items-center">
+<div class="row mt-3">
+    <div class="col-md-8 mx-auto">
+
+        <div class="card shadow-sm dashboard-card rounded-3">
+
+            <!-- HEADER -->
+            <div class="card-header dashboard-card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Kullanıcı Güncelle</h5>
+
+                <a asp-action="Index" class="btn btn-action go text-decoration-none">
                     <i class="fa-solid fa-list"></i>
                 </a>
             </div>
+
+            <!-- BODY -->
             <div class="card-body">
-                @* <div asp-validation-summary="All" class="text-danger"></div> *@
+
                 <form method="post" asp-action="Edit">
+
+                    <!-- Ad Soyad -->
                     <div class="mb-3">
-                        <label asp-for="AdSoyad" class="form-label"></label>
-                        <input asp-for="AdSoyad" class="form-control">
-                        <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                        <label asp-for="AdSoyad" class="form-label fw-medium"></label>
+                        <input asp-for="AdSoyad" class="form-control" />
+                        <span asp-validation-for="AdSoyad" class="text-danger small"></span>
                     </div>
+
+                    <!-- Email -->
                     <div class="mb-3">
-                        <label asp-for="Email" class="form-label"></label>
-                        <input asp-for="Email" class="form-control">
-                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <label asp-for="Email" class="form-label fw-medium"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
                     </div>
-                    <div class="card mb-2">
-                        <div class="card-header">
-                            <h6 class="card-title mb-0">Parola Güncelle</h6>
+
+                    <!-- PAROLA GÜNCELLE KARTI -->
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="card-header bg-light fw-semibold">
+                            Parola Güncelle
                         </div>
+
                         <div class="card-body">
+
                             <div class="mb-3">
-                                <label asp-for="Password" class="form-label"></label>
-                                <input asp-for="Password" class="form-control">
-                                <span asp-validation-for="Password" class="text-danger"></span>
+                                <label asp-for="Password" class="form-label fw-medium"></label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger small"></span>
                             </div>
+
                             <div class="mb-3">
-                                <label asp-for="ConfirmPassword" class="form-label"></label>
-                                <input asp-for="ConfirmPassword" class="form-control">
-                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                <label asp-for="ConfirmPassword" class="form-label fw-medium"></label>
+                                <input asp-for="ConfirmPassword" class="form-control" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
                             </div>
+
                         </div>
                     </div>
-                    <div class="card mb-2">
-                        <div class="card-header">
-                            <h6 class="card-title mb-0">Roller</h6>
+
+                    <!-- ROLLER -->
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="card-header bg-light fw-semibold">
+                            Roller
                         </div>
+
                         <div class="card-body">
-                            @foreach(var item in ViewBag.Roles)
+                            @foreach (var item in ViewBag.Roles)
                             {
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="SecilenRoller" value="@item" id="@item" @(Model.SecilenRoller!.Any(i=> i== item) ? "checked" : "")>
+                                <div class="form-check mb-1">
+                                    <input type="checkbox" class="form-check-input"
+                                           name="SecilenRoller"
+                                           value="@item"
+                                           id="@item"
+                                           @(Model.SecilenRoller!.Contains(item) ? "checked" : "") />
+
                                     <label for="@item" class="form-check-label">@item</label>
                                 </div>
                             }
                         </div>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
-                        
+
+                    <!-- KAYDET -->
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-check me-1"></i> Kaydet
+                        </button>
+                    </div>
+
                 </form>
+
             </div>
         </div>
+
     </div>
 </div>
 

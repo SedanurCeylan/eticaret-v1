@@ -10,27 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/theme.css">
+
     <title>E-Ticaret</title>
 </head>
 
-<body class="bg-light">
+<!-- ***** BURASI DEĞİŞTİ ***** -->
+<body class="bg-light d-flex flex-column min-vh-100">
 
     <header>
-    
-        
         @await Html.PartialAsync("Partials/Site/_Topbar")
-        
-        @* her sayfada olmayabilir *@
-        @RenderSection("Bar",required:false)
+        @RenderSection("Bar", required: false)
         @await Html.PartialAsync("Partials/Admin/_Message")
-        
     </header>
 
-    <main>
+    <!-- MAIN WRAPPER -->
+    <main class="flex-grow-1">
         @RenderBody()
     </main>
-    
 
     @await Html.PartialAsync("Partials/Site/_Footer")
 
@@ -40,4 +39,4 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
-</html> 
+</html>

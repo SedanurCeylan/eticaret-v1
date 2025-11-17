@@ -1,67 +1,45 @@
-@model e_ticaret_proje.Models.AdminDashboardViewModel;
+@model e_ticaret_proje.Models.AdminDashboardViewModel
 
-<div class="row">
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col">
-                        <div class="fw-bold text-primary text-uppercase mb-1">Satış</div>
-                        <div class="h5 mb-0 font-weight-bold">@Model.TotalSales.ToString("C")</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                </div>
+<div class="row g-4">
+
+    <div class="col-xl-3 col-md-6">
+        <div class="admin-card">
+            <div>
+                <div class="card-title">Satış</div>
+                <div class="card-value">@Model.TotalSales.ToString("C")</div>
             </div>
+            <i class="fa-solid fa-coins card-icon"></i>
         </div>
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col">
-                        <div class="fw-bold text-success text-uppercase mb-1">Sipariş</div>
-                        <div class="h5 mb-0 font-weight-bold">@Model.TotalOrders</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fa-solid fa-truck fa-2x text-gray-300"></i>
-                    </div>
-                </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="admin-card">
+            <div>
+                <div class="card-title">Sipariş</div>
+                <div class="card-value">@Model.TotalOrders</div>
             </div>
+            <i class="fa-solid fa-truck card-icon"></i>
         </div>
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col">
-                        <div class="fw-bold text-warning text-uppercase mb-1">Ürün Adeti</div>
-                        <div class="h5 mb-0 font-weight-bold">@Model.TotalProducts</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fa-solid fa-list fa-2x text-gray-300"></i>
-                    </div>
-                </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="admin-card">
+            <div>
+                <div class="card-title">Ürün Adeti</div>
+                <div class="card-value">@Model.TotalProducts</div>
             </div>
+            <i class="fa-solid fa-box card-icon"></i>
         </div>
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col">
-                        <div class="fw-bold text-info text-uppercase mb-1">Kullanıcı Sayısı</div>
-                        <div class="h5 mb-0 font-weight-bold">@Model.TotalUsers</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fa-solid fa-user fa-2x text-gray-300"></i>
-                    </div>
-                </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="admin-card">
+            <div>
+                <div class="card-title">Kullanıcı Sayısı</div>
+            <div class="card-value">@Model.TotalUsers</div>
             </div>
+            <i class="fa-solid fa-user card-icon"></i>
         </div>
     </div>
+
 </div>
