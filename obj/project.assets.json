@@ -3291,11 +3291,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DEEP THINK\\Desktop\\asp.net-ile-eticaret\\e-ticaret-proje.csproj",
+      "projectUniqueName": "C:\\Users\\DEEP THINK\\Desktop\\eticaret-v1\\e-ticaret-proje.csproj",
       "projectName": "e-ticaret-proje",
-      "projectPath": "C:\\Users\\DEEP THINK\\Desktop\\asp.net-ile-eticaret\\e-ticaret-proje.csproj",
+      "projectPath": "C:\\Users\\DEEP THINK\\Desktop\\eticaret-v1\\e-ticaret-proje.csproj",
       "packagesPath": "C:\\Users\\DEEP THINK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DEEP THINK\\Desktop\\asp.net-ile-eticaret\\obj\\",
+      "outputPath": "C:\\Users\\DEEP THINK\\Desktop\\eticaret-v1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DEEP THINK\\AppData\\Roaming\\NuGet\\NuGet.Config"
